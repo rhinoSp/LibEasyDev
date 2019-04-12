@@ -21,7 +21,7 @@ ext {
             "glide-compiler"         : 'com.github.bumptech.glide:compiler:4.6.1',
 
             "LibDialogFragment"      : 'com.github.rhinoSp:LibDialogFragment:v1.1.9',
-            "LibBaseUi"              : 'com.github.rhinoSp:LibBaseUi:v1.0.21',
+            "LibBaseUi"              : 'com.github.rhinoSp:LibBaseUi:v1.1',
             "LibRecyclerView"        : 'com.github.rhinoSp:LibRecyclerView:v1.0.7',
             "LibPermission"          : 'com.github.rhinoSp:LibPermission:v1.0.0',
             "LibAutoCompleteTextView": 'com.github.rhinoSp:LibAutoCompleteTextView:v1.2.1',
