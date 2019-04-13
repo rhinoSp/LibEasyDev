@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.view.View;
 
+import com.rhino.easydev.utils.CommonHttpUtils;
 import com.rhino.ui.base.BaseActivity;
 
 /**
@@ -12,6 +13,7 @@ import com.rhino.ui.base.BaseActivity;
  **/
 public abstract class BaseHttpActivity<T extends ViewDataBinding> extends BaseActivity {
 
+    public CommonHttpUtils httpUtils;
     public T dataBinding;
 
     @Override
@@ -27,7 +29,16 @@ public abstract class BaseHttpActivity<T extends ViewDataBinding> extends BaseAc
 
     @Override
     public boolean initData() {
+        httpUtils = new CommonHttpUtils(this);
         return true;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (httpUtils != null) {
+            httpUtils.dismissLoadingDialog();
+        }
     }
 
 }

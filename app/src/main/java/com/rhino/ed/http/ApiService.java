@@ -1,10 +1,6 @@
 package com.rhino.ed.http;
 
 
-import com.rhino.ed.http.result.HomeModel;
-
-import java.util.List;
-
 import io.reactivex.Observable;
 import retrofit2.http.POST;
 
@@ -18,7 +14,6 @@ public interface ApiService {
     String BASE_URL = "http://www.51jiaji.cn:802/crm/";
 
     @POST("MP/GetVersion")
-    Observable<BaseResult<String>> getHomeModel();
-
+    Observable<BaseResult<String>> getVersion();
 
 }

@@ -5,6 +5,7 @@ import android.databinding.ViewDataBinding;
 import android.support.annotation.NonNull;
 import android.view.View;
 
+import com.rhino.easydev.utils.CommonHttpUtils;
 import com.rhino.ui.base.BaseSimpleTitleFragment;
 
 /**
@@ -13,6 +14,7 @@ import com.rhino.ui.base.BaseSimpleTitleFragment;
  */
 public abstract class BaseSimpleTitleHttpFragment<T extends ViewDataBinding> extends BaseSimpleTitleFragment {
 
+    public CommonHttpUtils httpUtils;
     public T dataBinding;
 
     @Override
@@ -28,7 +30,16 @@ public abstract class BaseSimpleTitleHttpFragment<T extends ViewDataBinding> ext
 
     @Override
     public boolean initData() {
+        httpUtils = new CommonHttpUtils(getActivity());
         return true;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (httpUtils != null) {
+            httpUtils.dismissLoadingDialog();
+        }
     }
 
 }
