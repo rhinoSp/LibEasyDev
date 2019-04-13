@@ -4,15 +4,50 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
+        android:orientation="vertical">
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:id="@+id/bt_request"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="@dimen/dp_10"
             android:onClick="onViewClick"
             android:padding="@dimen/dp_20"
             android:text="request"
+            android:textSize="@dimen/sp_14"/>
+
+        <Button
+            android:id="@+id/bt_date_picker"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:onClick="onViewClick"
+            android:padding="@dimen/dp_20"
+            android:text="date picker"
+            android:textSize="@dimen/sp_14"/>
+
+        <Button
+            android:id="@+id/bt_take_picture"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:onClick="onViewClick"
+            android:padding="@dimen/dp_20"
+            android:text="take picture"
+            android:textSize="@dimen/sp_14"/>
+
+        <Button
+            android:id="@+id/bt_wheel_select"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:onClick="onViewClick"
+            android:padding="@dimen/dp_20"
+            android:text="wheel select"
             android:textSize="@dimen/sp_14"/>
 
     </LinearLayout>

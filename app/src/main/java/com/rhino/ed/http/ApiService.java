@@ -1,6 +1,8 @@
 package com.rhino.ed.http;
 
 
+import com.rhino.ed.http.result.BaseResult;
+
 import io.reactivex.Observable;
 import retrofit2.http.POST;
 

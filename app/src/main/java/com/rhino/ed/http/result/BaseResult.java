@@ -1,4 +1,4 @@
-package com.rhino.ed.http;
+package com.rhino.ed.http.result;
 
 /**
  * @author LuoLin
