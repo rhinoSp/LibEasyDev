@@ -10,8 +10,8 @@ import com.rhino.ui.base.BaseSimpleTitleFragment;
 
 /**
  * @author rhino
- * @since Create on 2018/9/20.
- */
+ * @since Create on 2019/4/13.
+ **/
 public abstract class BaseSimpleTitleHttpFragment<T extends ViewDataBinding> extends BaseSimpleTitleFragment {
 
     public CommonHttpUtils httpUtils;

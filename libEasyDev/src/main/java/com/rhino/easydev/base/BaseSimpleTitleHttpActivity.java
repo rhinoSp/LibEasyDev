@@ -20,7 +20,7 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * @author rhino
- * @since Create on 2018/9/19.
+ * @since Create on 2019/4/13.
  **/
 public abstract class BaseSimpleTitleHttpActivity<T extends ViewDataBinding> extends BaseSimpleTitleActivity {
 

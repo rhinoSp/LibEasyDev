@@ -7,7 +7,7 @@ import com.rhino.rv.base.BaseHolderData;
 
 /**
  * @author rhino
- * @since Create on 2018/9/20.
+ * @since Create on 2019/4/13.
  **/
 public abstract class BaseRecvHolderData<T extends ViewDataBinding> extends BaseHolderData {
 

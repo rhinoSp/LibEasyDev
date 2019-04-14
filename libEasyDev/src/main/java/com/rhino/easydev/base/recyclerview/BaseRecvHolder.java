@@ -7,7 +7,7 @@ import com.rhino.rv.base.BaseHolder;
 
 /**
  * @author rhino
- * @since Create on 2018/9/20.
+ * @since Create on 2019/4/13.
  **/
 public class BaseRecvHolder extends BaseHolder<BaseRecvHolderData> {
 

@@ -9,7 +9,7 @@ import com.rhino.ui.base.BaseActivity;
 
 /**
  * @author rhino
- * @since Create on 2018/9/20.
+ * @since Create on 2019/4/13.
  **/
 public abstract class BaseHttpActivity<T extends ViewDataBinding> extends BaseActivity {
 

@@ -1,2 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rhino.easydev" />
+    package="com.rhino.easydev">
+
+    <application>
+        <activity
+            android:name=".ui.activity.ImageDetailsActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

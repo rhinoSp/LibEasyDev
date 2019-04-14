@@ -18,8 +18,8 @@ import com.rhino.ui.utils.ui.ScreenUtils;
 
 /**
  * @author rhino
- * @since Create on 2019/2/28.
- */
+ * @since Create on 2019/4/13.
+ **/
 public class BaseHttpBottomSheetDialog<T extends ViewDataBinding> extends BottomSheetDialog {
 
     public CommonHttpUtils httpUtils;

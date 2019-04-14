@@ -10,8 +10,8 @@ import com.rhino.ui.base.BaseFragment;
 
 /**
  * @author rhino
- * @since Create on 2018/9/20.
- */
+ * @since Create on 2019/4/13.
+ **/
 public abstract class BaseHttpFragment<T extends ViewDataBinding> extends BaseFragment {
 
     public CommonHttpUtils httpUtils;

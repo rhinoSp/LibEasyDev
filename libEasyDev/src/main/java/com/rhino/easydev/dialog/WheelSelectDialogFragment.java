@@ -16,8 +16,8 @@ import com.rhino.easydev.databinding.DialogWheelSelectBinding;
 
 /**
  * @author rhino
- * @since Create on 2018/10/26.
- */
+ * @since Create on 2019/4/13.
+ **/
 public class WheelSelectDialogFragment extends BaseSimpleDialogFragment {
 
     private DialogWheelSelectBinding dataBinding;

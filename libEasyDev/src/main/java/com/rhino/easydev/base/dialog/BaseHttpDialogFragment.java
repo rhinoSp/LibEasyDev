@@ -11,8 +11,8 @@ import com.rhino.easydev.utils.CommonHttpUtils;
 
 /**
  * @author rhino
- * @since Create on 2019/2/26.
- */
+ * @since Create on 2019/4/13.
+ **/
 public abstract class BaseHttpDialogFragment<T extends ViewDataBinding> extends BaseDialogFragment {
 
     public CommonHttpUtils httpUtils;
