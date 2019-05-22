@@ -20,9 +20,9 @@ ext {
             "glide-glide"            : 'com.github.bumptech.glide:glide:4.6.1',
             "glide-compiler"         : 'com.github.bumptech.glide:compiler:4.6.1',
 
-            "LibDialogFragment"      : 'com.github.rhinoSp:LibDialogFragment:v1.1.11',
+            "LibDialogFragment"      : 'com.github.rhinoSp:LibDialogFragment:v1.1.14',
             "LibBaseUi"              : 'com.github.rhinoSp:LibBaseUi:v1.1',
-            "LibRecyclerView"        : 'com.github.rhinoSp:LibRecyclerView:v1.0.7',
+            "LibRecyclerView"        : 'com.github.rhinoSp:LibRecyclerView:v1.0.8',
             "LibPermission"          : 'com.github.rhinoSp:LibPermission:v1.0.0',
             "LibAutoCompleteTextView": 'com.github.rhinoSp:LibAutoCompleteTextView:v1.2.1',
             "LibRetrofit2OkHttp3"    : 'com.github.rhinoSp:LibRetrofit2OkHttp3:v1.0'

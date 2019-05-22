@@ -29,37 +29,13 @@ public class CommonHttpUtils {
         this.fragmentActivity = fragmentActivity;
         this.loadingDialogFragment = new LoadingDialogFragment();
         this.loadingDialogFragment.setText("加载中");
-        this.loadingDialogFragment.setIOnDialogListener(new IOnDialogListener<LoadingDialogFragment>() {
-            @Override
-            public void onStart(LoadingDialogFragment loadingDialogFragment) {
-            }
-
-            @Override
-            public void onResume(LoadingDialogFragment loadingDialogFragment) {
-            }
-
-            @Override
-            public void onPause(LoadingDialogFragment loadingDialogFragment) {
-            }
-
-            @Override
-            public void onStop(LoadingDialogFragment loadingDialogFragment) {
-            }
-
-            @Override
-            public void onDismiss(LoadingDialogFragment loadingDialogFragment) {
-                onLoadingDialogCancel(loadingDialogFragment);
-            }
-        });
     }
 
     /**
-     * 加载对话框被取消监听
-     *
-     * @param dialogFragment dialogFragment
+     * 设置对话框监听
      */
-    public void onLoadingDialogCancel(LoadingDialogFragment dialogFragment) {
-
+    public void setIOnDialogListener(IOnDialogListener listener) {
+        loadingDialogFragment.setIOnDialogListener(listener);
     }
 
     /**
@@ -76,7 +52,7 @@ public class CommonHttpUtils {
      **/
     public void showLoadingDialog(String text) {
         dismissLoadingDialog();
-        if (null != loadingDialogFragment && !loadingDialogFragment.isAdded()) {
+        if (null != loadingDialogFragment && !loadingDialogFragment.isAdded() && fragmentActivity != null && !fragmentActivity.isFinishing()) {
             updateLoadingDialogText(text);
             loadingDialogFragment.show(fragmentActivity);
         }
@@ -87,7 +63,7 @@ public class CommonHttpUtils {
      **/
     public void showLoadingDialog() {
         dismissLoadingDialog();
-        if (null != loadingDialogFragment && !loadingDialogFragment.isAdded()) {
+        if (null != loadingDialogFragment && !loadingDialogFragment.isAdded() && fragmentActivity != null && !fragmentActivity.isFinishing()) {
             loadingDialogFragment.show(fragmentActivity);
         }
     }
@@ -147,7 +123,7 @@ public class CommonHttpUtils {
      * 处理请求
      *
      * @param observable    observable
-     * @param consumerStart  consumerStart
+     * @param consumerStart consumerStart
      * @param consumerNext  consumerNext
      * @param consumerError consumerError
      * @return Disposable
