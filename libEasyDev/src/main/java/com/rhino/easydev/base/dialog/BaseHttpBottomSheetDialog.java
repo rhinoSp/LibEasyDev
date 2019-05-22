@@ -3,6 +3,8 @@ package com.rhino.easydev.base.dialog;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
@@ -16,6 +18,8 @@ import com.rhino.easydev.utils.CommonHttpUtils;
 import com.rhino.ui.impl.IOnNoMultiClickListener;
 import com.rhino.ui.utils.ui.ScreenUtils;
 
+import java.lang.ref.WeakReference;
+
 /**
  * @author rhino
  * @since Create on 2019/4/13.
@@ -24,6 +28,7 @@ public class BaseHttpBottomSheetDialog<T extends ViewDataBinding> extends Bottom
 
     public CommonHttpUtils httpUtils;
     public T dataBinding;
+    public Handler handler;
 
     /**
      * The parent view.
@@ -57,6 +62,7 @@ public class BaseHttpBottomSheetDialog<T extends ViewDataBinding> extends Bottom
     @Override
     public void onCreate(Bundle savedInstanceState) {
         httpUtils = new CommonHttpUtils((FragmentActivity) getOwnerActivity());
+        handler = new MyHandler(this);
         super.onCreate(savedInstanceState);
     }
 
@@ -189,4 +195,23 @@ public class BaseHttpBottomSheetDialog<T extends ViewDataBinding> extends Bottom
         return false;
     }
 
+    public void handleMessageOs(@NonNull Message message) {
+    }
+
+    private static final class MyHandler extends Handler {
+        private final WeakReference<BaseHttpBottomSheetDialog> reference;
+
+        private MyHandler(BaseHttpBottomSheetDialog obj) {
+            reference = new WeakReference<>(obj);
+        }
+
+        @Override
+        public void handleMessage(Message message) {
+            BaseHttpBottomSheetDialog activity = reference.get();
+            if (activity != null && message != null) {
+                activity.handleMessageOs(message);
+            }
+        }
+    }
+    
 }

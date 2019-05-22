@@ -2,21 +2,15 @@ package com.rhino.easydev.base;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Message;
+import android.support.annotation.NonNull;
 import android.view.View;
 
-import com.rhino.dialog.LoadingDialogFragment;
-import com.rhino.dialog.impl.IOnDialogListener;
 import com.rhino.easydev.utils.CommonHttpUtils;
 import com.rhino.ui.base.BaseSimpleTitleActivity;
-import com.rhino.ui.utils.LogUtils;
 
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
+import java.lang.ref.WeakReference;
 
 /**
  * @author rhino
@@ -26,6 +20,7 @@ public abstract class BaseSimpleTitleHttpActivity<T extends ViewDataBinding> ext
 
     public CommonHttpUtils httpUtils;
     public T dataBinding;
+    public Handler handler;
 
     @Override
     public void setContentView(int layoutResID) {
@@ -41,6 +36,7 @@ public abstract class BaseSimpleTitleHttpActivity<T extends ViewDataBinding> ext
     @Override
     public boolean initData() {
         httpUtils = new CommonHttpUtils(this);
+        handler = new MyHandler(this);
         return true;
     }
 
@@ -49,6 +45,26 @@ public abstract class BaseSimpleTitleHttpActivity<T extends ViewDataBinding> ext
         super.onPause();
         if (httpUtils != null) {
             httpUtils.dismissLoadingDialog();
+        }
+    }
+
+
+    public void handleMessageOs(@NonNull Message message) {
+    }
+
+    private static final class MyHandler extends Handler {
+        private final WeakReference<BaseSimpleTitleHttpActivity> reference;
+
+        private MyHandler(BaseSimpleTitleHttpActivity obj) {
+            reference = new WeakReference<>(obj);
+        }
+
+        @Override
+        public void handleMessage(Message message) {
+            BaseSimpleTitleHttpActivity activity = reference.get();
+            if (activity != null && message != null) {
+                activity.handleMessageOs(message);
+            }
         }
     }
 
