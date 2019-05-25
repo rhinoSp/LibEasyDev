@@ -70,8 +70,4 @@ public class MainActivity extends BaseSimpleTitleHttpActivity<ActivityMainBindin
         }
     }
 
-    private void showToast(String msg) {
-        ToastUtils.show(msg);
-    }
-
 }

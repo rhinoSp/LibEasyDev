@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.rhino.easydev.utils.CommonHttpUtils;
 import com.rhino.ui.base.BaseFragment;
+import com.rhino.ui.utils.ui.ToastUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -46,6 +47,10 @@ public abstract class BaseHttpFragment<T extends ViewDataBinding> extends BaseFr
         if (httpUtils != null) {
             httpUtils.dismissLoadingDialog();
         }
+    }
+
+    public void showToast(String message) {
+        ToastUtils.show(message);
     }
 
     public void handleMessageOs(@NonNull Message message) {

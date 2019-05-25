@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.rhino.dialog.base.BaseSimpleDialogFragment;
 import com.rhino.easydev.utils.CommonHttpUtils;
+import com.rhino.ui.utils.ui.ToastUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -42,6 +43,10 @@ public abstract class BaseHttpSimpleDialogFragment<T extends ViewDataBinding> ex
         httpUtils = new CommonHttpUtils(getActivity());
         handler = new MyHandler(this);
         return true;
+    }
+
+    public void showToast(String message) {
+        ToastUtils.show(message);
     }
 
     public void handleMessageOs(@NonNull Message message) {

@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import com.rhino.easydev.utils.CommonHttpUtils;
 import com.rhino.ui.impl.IOnNoMultiClickListener;
 import com.rhino.ui.utils.ui.ScreenUtils;
+import com.rhino.ui.utils.ui.ToastUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -193,6 +194,10 @@ public class BaseHttpBottomSheetDialog<T extends ViewDataBinding> extends Bottom
      */
     public boolean baseOnLongClickListener(View v) {
         return false;
+    }
+
+    public void showToast(String message) {
+        ToastUtils.show(message);
     }
 
     public void handleMessageOs(@NonNull Message message) {
